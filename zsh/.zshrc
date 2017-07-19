@@ -25,8 +25,7 @@ alias music4="rdmd --eval=\"import std.c.stdio; for(int i=0;;i++)putchar(((i^(/*
 
 alias powernex="cd ~/OSDev/PowerNex; source env.sh"
 
-alias mpv1080="mpv 
---ytdl-format='bestvideo[ext=webm][width<=1920][height<=1080]+bestaudio[ext=m4a]'"
+alias mpv1080="mpv --ytdl-format='bestvideo[ext=webm][width<=1920][height<=1080]+bestaudio[ext=m4a]'"
 alias mpv1440="mpv --ytdl-format='bestvideo[ext=webm][width<=2560][height<=1440]+bestaudio[ext=m4a]'"
 alias yt="youtube-viewer --resolution=original --video-player=mpv"
 alias cal="cal -m -w"
