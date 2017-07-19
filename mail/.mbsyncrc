@@ -1,21 +1,48 @@
-IMAPAccount gmail
+IMAPAccount xwildn00bx
 Host imap.gmail.com
 User xwildn00bx@gmail.com
 PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.xwildn00bx.gpg"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore gmail-remote
-Account gmail
+IMAPStore xwildn00bx-remote
+Account xwildn00bx
 
-MaildirStore gmail-local
-# The trailing "/" is important
+MaildirStore xwildn00bx-local
 Path ~/mail/xwildn00bx/
 Inbox ~/mail/xwildn00bx/Inbox
 
-Channel gmail
-Master :gmail-remote:
-Slave :gmail-local:
-Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+Channel xwildn00bx-default
+Master :xwildn00bx-remote:
+Slave :xwildn00bx-local:Inbox
+
+Channel xwildn00bx-drafts
+Master :xwildn00bx-remote:"[Gmail]/Drafts"
+Slave :xwildn00bx-local:Drafts
+
+Channel xwildn00bx-sent
+Master :xwildn00bx-remote:"[Gmail]/Sent Mail"
+Slave :xwildn00bx-local:Sent
+
+Channel xwildn00bx-all
+Master :xwildn00bx-remote:"[Gmail]/All Mail"
+Slave :xwildn00bx-local:All
+
+Channel xwildn00bx-spam
+Master :xwildn00bx-remote:"[Gmail]/Spam"
+Slave :xwildn00bx-local:Spam
+
+Channel xwildn00bx-trash
+Master :xwildn00bx-remote:"[Gmail]/Trash"
+Slave :xwildn00bx-local:Trash
+
 Create Both
+Expunge Both
 SyncState *
+Group xwildn00bx
+Channel xwildn00bx-default
+Channel xwildn00bx-drafts
+Channel xwildn00bx-sent
+Channel xwildn00bx-all
+Channel xwildn00bx-spam
+Channel xwildn00bx-trash
