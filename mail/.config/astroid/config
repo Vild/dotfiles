@@ -11,28 +11,6 @@
             "level": "0"
         }
     },
-    "accounts": {
-        "xwildn00b@gmail.com": {
-            "name": "Dan Printzell",
-            "email": "xwildn00bx@gmail.com",
-            "gpgkey": "0x0E87D6C3F9AF7FDED0C8588D22E3B67B4A86FDE7",
-            "always_gpg_sign": "true",
-            "sendmail": "msmtp --read-envelope-from -i -t",
-            "default": "true",
-            "save_sent": "true",
-            "save_sent_to": "\/home\/wild\/mail\/Sent\/cur\/",
-            "additional_sent_tags": "",
-            "save_drafts_to": "\/home\/wild\/mail\/Drafts\/",
-            "signature_file": "",
-            "signature_default_on": "true",
-            "signature_attach": "false"
-        }
-    },
-    "startup": {
-        "queries": {
-            "inbox": "tag:inbox"
-        }
-    },
     "thread_index": {
         "page_jump_rows": "6",
         "sort_order": "newest",
@@ -117,5 +95,57 @@
         "save_history": "true",
         "history_lines_to_show": "15",
         "history_lines": "1000"
+    },
+    "accounts": {
+        "xwildn00b@gmail": {
+            "name": "Dan Printzell",
+            "email": "xwildn00bx@gmail.com",
+            "gpgkey": "0x0E87D6C3F9AF7FDED0C8588D22E3B67B4A86FDE7",
+            "always_gpg_sign": "true",
+            "sendmail": "msmtp --read-envelope-from -i -t",
+            "default": "true",
+            "save_sent": "true",
+            "save_sent_to": "\/home\/wild\/mail\/xwildn00bx\/Sent\/cur\/",
+            "additional_sent_tags": "",
+            "save_drafts_to": "\/home\/wild\/mail\/xwildn00bx\/Drafts\/",
+            "signature_file": "",
+            "signature_default_on": "true",
+            "signature_attach": "false"
+        },
+        "me@vild": {
+            "name": "Dan Printzell",
+            "email": "me@vild.io",
+            "gpgkey": "0x0E87D6C3F9AF7FDED0C8588D22E3B67B4A86FDE7",
+            "always_gpg_sign": "true",
+            "sendmail": "msmtp --read-envelope-from -i -t",
+            "default": "true",
+            "save_sent": "true",
+            "save_sent_to": "\/home\/wild\/mail\/xwildn00bx\/Sent\/cur\/",
+            "additional_sent_tags": "",
+            "save_drafts_to": "\/home\/wild\/mail\/xwildn00bx\/Drafts\/",
+            "signature_file": "",
+            "signature_default_on": "true",
+            "signature_attach": "false"
+        },
+        "arch@vild": {
+            "name": "Dan Printzell",
+            "email": "arch@vild.io",
+            "gpgkey": "0x0E87D6C3F9AF7FDED0C8588D22E3B67B4A86FDE7",
+            "always_gpg_sign": "true",
+            "sendmail": "msmtp --read-envelope-from -i -t",
+            "default": "true",
+            "save_sent": "true",
+            "save_sent_to": "\/home\/wild\/mail\/xwildn00bx\/Sent\/cur\/",
+            "additional_sent_tags": "",
+            "save_drafts_to": "\/home\/wild\/mail\/xwildn00bx\/Drafts\/",
+            "signature_file": "",
+            "signature_default_on": "true",
+            "signature_attach": "false"
+        }
+    },
+    "startup": {
+        "queries": {
+            "inbox": "tag:inbox"
+        }
     }
 }

@@ -30,6 +30,8 @@ alias mpv1440="mpv --ytdl-format='bestvideo[ext=webm][width<=2560][height<=1440]
 alias yt="youtube-viewer --resolution=original --video-player=mpv"
 alias cal="cal -m -w"
 
+export PATH="$PATH:/home/wild/.local/bin/"
+
 export SUDO_ASKPASS="/usr/lib/ssh/ssh-askpass"
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"                  # $EDITOR should open in terminal

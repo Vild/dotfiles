@@ -48,8 +48,8 @@ other_email=me@vild.io;arch@vild.io;
 #		in the mail store.
 #
 [new]
-tags=unread;inbox;
-ignore=
+tags=new
+ignore=ignore=*.json;
 
 # Search configuration
 #
@@ -61,7 +61,7 @@ ignore=
 #		query will override that exclusion.
 #
 [search]
-exclude_tags=deleted;spam;
+exclude_tags=
 
 # Maildir compatibility configuration
 #
