@@ -48,7 +48,7 @@
     },
     "mail": {
         "reply": {
-            "quote_line": "Excerpts from %1's message of %2:",
+            "quote_line": "On %2, %1 wrote:",
             "mailinglist_reply_to_sender": "true"
         },
         "forward": {
