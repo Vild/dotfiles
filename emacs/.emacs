@@ -24,7 +24,7 @@
   (progn
     (delete-selection-mode 1)
     (setq x-select-enable-clipboard t
-	  x-select-enable-primary t)))
+					x-select-enable-primary t)))
 
 
 (setq select-active-regions t)
@@ -59,27 +59,73 @@
     (mapc 'el-get-remove packages-to-remove)))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-                                                                           
+
 (defvar my-packages
-  '(notmuch)                 
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode)
   "Canonical list of packages.")
-(el-get-cleanup my-packages)                                                                                                                                    
-(el-get 'sync my-packages)  
+(el-get-cleanup my-packages)
+(el-get 'sync my-packages)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (el-get))))
+ '(custom-enabled-themes (quote (deeper-blue)))
+ '(global-linum-mode t)
+ '(global-whitespace-mode t)
+ '(neo-autorefresh nil)
+ '(neo-click-changes-root nil)
+ '(neo-theme (quote classic))
+ '(neo-window-position (quote right))
+ '(package-selected-packages (quote (el-get)))
+ '(select-active-regions nil)
+ '(tab-width 2)
+ '(whitespace-global-modes t)
+ '(whitespace-style (quote (face trailing lines-tail space-before-tab))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(my-carriage-return-face ((((class color)) (:background "blue"))) t)
+ '(my-tab-face ((((class color)) (:background "green"))) t))
+
+(global-set-key [f7] (lambda ()
+											 (interactive)
+											 (set-default-font "DejaVu Sans Mono Book 14")))
+
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono Book 14"))
+
+(delete-selection-mode)
 
 (require 'notmuch)
 (add-to-list 'auto-mode-alist '("xwildn00bx@gmail.com" . notmuch-message-mode))
 (add-to-list 'auto-mode-alist '("me@vild.io" . notmuch-message-mode))
 (add-to-list 'auto-mode-alist '("arch@vild.io" . notmuch-message-mode))
+
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(require 'irony)
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+(add-hook 'c++-mode-hook 'company-irony)
+(add-hook 'c-mode-hook 'company-irony)
+(add-hook 'objc-mode-hook 'company-irony)
+
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+
+(require 'wakatime-mode)
+(global-wakatime-mode)
