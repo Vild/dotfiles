@@ -61,7 +61,7 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
@@ -99,6 +99,11 @@
 
 (delete-selection-mode)
 
+(add-hook 'c-mode-common-hook
+					(lambda ()
+						(font-lock-add-keywords nil
+																		'(("\\<\\(FIXME\\|TODO\\|BUG\\|XXX\\):" 1 font-lock-warning-face t)))))
+
 (require 'notmuch)
 (add-to-list 'auto-mode-alist '("xwildn00bx@gmail.com" . notmuch-message-mode))
 (add-to-list 'auto-mode-alist '("me@vild.io" . notmuch-message-mode))
@@ -129,3 +134,11 @@
 
 (require 'wakatime-mode)
 (global-wakatime-mode)
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+; The '<' & '>' have been reverted due to kb layout
+(global-set-key (kbd "C-<") 'mc/mark-next-like-this)
+(global-set-key (kbd "C->") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
