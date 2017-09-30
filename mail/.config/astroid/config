@@ -1,7 +1,7 @@
 {
     "astroid": {
         "config": {
-            "version": "7"
+            "version": "9"
         },
         "notmuch_config": "\/home\/wild\/.notmuch-config",
         "debug": {
@@ -110,7 +110,9 @@
             "save_drafts_to": "\/home\/wild\/mail\/xwildn00bx\/Drafts\/",
             "signature_file": "",
             "signature_default_on": "true",
-            "signature_attach": "false"
+            "signature_attach": "false",
+            "signature_separate": "false",
+            "select_query": ""
         },
         "me@vild": {
             "name": "Dan Printzell",
@@ -125,7 +127,9 @@
             "save_drafts_to": "\/home\/wild\/mail\/xwildn00bx\/Drafts\/",
             "signature_file": "",
             "signature_default_on": "true",
-            "signature_attach": "false"
+            "signature_attach": "false",
+            "signature_separate": "false",
+            "select_query": ""
         },
         "arch@vild": {
             "name": "Dan Printzell",
@@ -140,7 +144,9 @@
             "save_drafts_to": "\/home\/wild\/mail\/xwildn00bx\/Drafts\/",
             "signature_file": "",
             "signature_default_on": "true",
-            "signature_attach": "false"
+            "signature_attach": "false",
+            "signature_separate": "false",
+            "select_query": ""
         }
     },
     "startup": {
