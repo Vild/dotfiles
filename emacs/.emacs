@@ -91,6 +91,10 @@
  '(my-carriage-return-face ((((class color)) (:background "blue"))) t)
  '(my-tab-face ((((class color)) (:background "green"))) t))
 
+(global-set-key [f6] (lambda ()
+											 (interactive)
+											 (set-default-font "lucy tewi Book 8")))
+
 (global-set-key [f7] (lambda ()
 											 (interactive)
 											 (set-default-font "DejaVu Sans Mono Book 14")))
