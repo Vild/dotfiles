@@ -71,7 +71,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(c-basic-offset 2)
+ '(c-default-style (quote ((c++-mode . "cc-mode") (java-mode . "java"))))
+ '(c-tab-always-indent nil)
  '(custom-enabled-themes (quote (deeper-blue)))
+ '(global-auto-revert-mode t)
  '(global-linum-mode t)
  '(global-whitespace-mode t)
  '(neo-autorefresh nil)
@@ -98,8 +102,18 @@
 (global-set-key [f7] (lambda ()
 											 (interactive)
 											 (set-default-font "DejaVu Sans Mono Book 14")))
+(global-set-key [f6] (lambda ()
+											 (interactive)
+											 (set-default-font "lucy tewi Book 8")))
 
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono Book 14"))
+
+(global-unset-key (kbd "C-z"))
+
+(defun close-all-buffers ()
+	(interactive)
+  (mapc 'kill-buffer (buffer-list)))
+
 
 (delete-selection-mode)
 
