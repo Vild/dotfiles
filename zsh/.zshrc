@@ -2,10 +2,10 @@
 ZSH=$HOME/.oh-my-zsh
 
 if [ ! -e $ZSH ]; then
-		sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-		exec zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    exec zsh
 fi;								
-ZSH_THEME="muse"
+ZSH_THEME="powernex"
 
 plugins=(git colored-man screen rsync nyan copyfile copydir cp emoji-clock tmuxinator taskwarrior ssh-agent pass)
 source $ZSH/oh-my-zsh.sh
