@@ -1,0 +1,4 @@
+(:name rust-mode
+       :type github
+       :pkgname "rust-lang/rust-mode"
+       :description "Emacs mode for Rust")

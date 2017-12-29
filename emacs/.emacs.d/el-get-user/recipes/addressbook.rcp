@@ -1,0 +1,6 @@
+(:name addressbook
+       :description "Simple vCard based addressbook for Emacs"
+       :type github
+       :pkgname "rlaboiss/addressbook"
+       :build (("make" "all"))
+       :info "./abook.info")

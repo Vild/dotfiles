@@ -1,0 +1,4 @@
+(:name csharp-mode
+       :description "C# mode derived mode."
+       :type github
+       :pkgname "josteink/csharp-mode")

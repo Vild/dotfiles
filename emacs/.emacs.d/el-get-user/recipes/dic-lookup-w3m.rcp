@@ -1,0 +1,6 @@
+(:name dic-lookup-w3m
+       :description "look up dictionaries on the Internet"
+       :website "https://osdn.jp/projects/dic-lookup-w3m/"
+       :type svn
+       :depends (emacs-w3m text-translator stem)
+       :url "http://svn.osdn.jp/svnroot/dic-lookup-w3m/")

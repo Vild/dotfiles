@@ -1,0 +1,5 @@
+(:name nav
+       :description "Emacs mode for filesystem navigation"
+       :website "https://github.com/ijt/emacs-nav"
+       :type github
+       :pkgname "ijt/emacs-nav")

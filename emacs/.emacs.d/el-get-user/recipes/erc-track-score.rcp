@@ -1,0 +1,5 @@
+(:name erc-track-score
+       :description "Add score support to tracked channel buffers."
+       :type github
+       :pkgname "jd/erc-track-score.el"
+       :depends (erc))

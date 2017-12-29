@@ -1,0 +1,5 @@
+(:name racket-mode
+       :description "Major mode for Racket language."
+       :type github
+       :pkgname "greghendershott/racket-mode"
+       :depends (s))

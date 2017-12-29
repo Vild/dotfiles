@@ -1,0 +1,5 @@
+(:name coffee-mode
+       :website "https://github.com/defunkt/coffee-mode"
+       :description "Emacs Major Mode for CoffeeScript"
+       :type github
+       :pkgname "defunkt/coffee-mode")

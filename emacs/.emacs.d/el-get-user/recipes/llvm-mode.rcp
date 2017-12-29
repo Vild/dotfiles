@@ -1,0 +1,10 @@
+(:name llvm-mode
+       :description "Major mode for the LLVM assembler language."
+       :website "http://llvm.org/"
+       :type http
+       :url "https://raw.githubusercontent.com/llvm-mirror/llvm/master/utils/emacs/llvm-mode.el"
+       :prepare (progn
+                  (autoload 'llvm-mode "llvm-mode"
+                    "LLVM assembler language editing mode." t)
+                  (add-to-list 'auto-mode-alist
+                               '("\\.ll\\'" . llvm-mode))))

@@ -1,0 +1,5 @@
+(:name google-contacts
+       :description "Access Google Contacts from Emacs."
+       :type github
+       :depends oauth2
+       :pkgname "jd/google-contacts.el")

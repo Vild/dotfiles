@@ -1,0 +1,5 @@
+(:name buffer-move
+       :description "Swap buffers without typing C-x b on each window"
+       :website "https://github.com/lukhas/buffer-move"
+       :type github
+       :pkgname "lukhas/buffer-move")

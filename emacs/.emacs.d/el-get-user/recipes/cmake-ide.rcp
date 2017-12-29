@@ -1,0 +1,6 @@
+(:name cmake-ide
+       :description "Calls CMake to find out include paths and other compiler flags."
+       :type github
+       :pkgname "atilaneves/cmake-ide"
+       :minimum-emacs-version "24.1"
+       :depends (cl-lib seq levenshtein))

@@ -1,0 +1,6 @@
+(:name dtrt-indent
+       :description "A minor mode that guesses the indentation offset originally used for creating source code files and transparently adjusts the corresponding settings in Emacs."
+       :type github
+       :pkgname "jscheid/dtrt-indent"
+       :features (dtrt-indent)
+       :post-init (dtrt-indent-mode 1))

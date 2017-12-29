@@ -1,0 +1,5 @@
+(:name git-auto-commit-mode
+       :description "Minor mode to automatically commit (and push) a git repository."
+       :website "https://github.com/ryuslash/git-auto-commit-mode/"
+       :type github
+       :pkgname "ryuslash/git-auto-commit-mode")

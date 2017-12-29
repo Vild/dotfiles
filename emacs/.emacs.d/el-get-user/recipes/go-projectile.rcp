@@ -1,0 +1,6 @@
+(:name go-projectile
+       :description "Go add-ons for Projectile mode"
+       :type github
+       :pkgname "dougm/go-projectile"
+       :depends (projectile go-mode go-rename go-eldoc)
+       :post-init (eval-after-load 'go-mode '(require 'go-projectile)))

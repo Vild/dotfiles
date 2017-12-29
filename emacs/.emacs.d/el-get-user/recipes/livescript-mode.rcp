@@ -1,0 +1,5 @@
+(:name livescript-mode
+       :description "LiveScript major mode"
+       :website "https://github.com/piotrklibert/livescript-mode"
+       :type github
+       :pkgname "piotrklibert/livescript-mode")

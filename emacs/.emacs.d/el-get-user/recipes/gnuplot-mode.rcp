@@ -1,0 +1,11 @@
+(:name gnuplot-mode
+       :description "Drive gnuplot from within emacs"
+       :type github
+       :pkgname "bruceravel/gnuplot-mode"
+       :build `(("autoreconf" "-f" "-i")  ; regenerate configure, since source
+                                          ; has version specific configure
+                                          ; file.
+                ("./configure")
+                ("make" ,(concat "EMACS=" el-get-emacs)
+                 "gnuplot.elc" "gnuplot-gui.elc"))
+       :info "gnuplot.info")

@@ -1,0 +1,4 @@
+(:name soap-client
+       :description "Access SOAP web services."
+       :type github
+       :pkgname "alex-hhh/emacs-soap-client")

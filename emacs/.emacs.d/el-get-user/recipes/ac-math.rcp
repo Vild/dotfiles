@@ -1,0 +1,6 @@
+(:name ac-math
+       :type github
+       :website "https://github.com/vspinu/ac-math"
+       :description "This is an add-on which defines three ac-sources for the auto-complete package"
+       :depends (auto-complete math-symbol-lists)
+       :pkgname "vspinu/ac-math")

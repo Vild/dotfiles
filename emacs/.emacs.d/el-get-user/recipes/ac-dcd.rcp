@@ -1,0 +1,4 @@
+(:name ac-dcd
+       :description "Auto-complete completion source for dcd-mode."
+       :type github
+       :pkgname "atilaneves/ac-dcd")

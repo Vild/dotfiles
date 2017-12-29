@@ -1,0 +1,4 @@
+(:name artbollocks-mode
+       :description "A minor mode to guide art writers"
+       :type github
+       :pkgname "sachac/artbollocks-mode")

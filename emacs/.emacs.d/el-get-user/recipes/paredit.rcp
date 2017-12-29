@@ -1,0 +1,6 @@
+(:name paredit
+       :description "Minor mode for editing parentheses"
+       :type github
+       :prepare (progn (autoload 'enable-paredit-mode "paredit")
+                       (autoload 'disable-paredit-mode "paredit"))
+       :pkgname "emacsmirror/paredit")
