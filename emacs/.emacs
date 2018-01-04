@@ -61,7 +61,7 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this auto-complete ac-dcd yaml-mode wc-mode)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
@@ -165,3 +165,13 @@
 (global-set-key (kbd "C-c C-f") 'fold-this-all)
 (global-set-key (kbd "C-c C-F") 'fold-this)
 (global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
+
+;;; ac-dcd
+(require 'ac-dcd)
+(add-hook 'd-mode-hook 'ac-dcd-setup)
+
+(require 'flycheck)
+(global-flycheck-mode)
+
+(provide '.emacs)
+;;; .emacs ends here
