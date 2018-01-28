@@ -37,16 +37,15 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
+(require 'package)
+(package-initialize)
+(package-refresh-contents)
+
 (unless (require 'el-get nil 'noerror)
-  (require 'package)
-  (add-to-list 'package-archives
-               '("melpa" . "http://melpa.org/packages/"))
-  (package-refresh-contents)
-  (package-initialize)
   (package-install 'el-get)
   (require 'el-get))
 
@@ -61,7 +60,7 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this auto-complete ac-dcd yaml-mode wc-mode)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this auto-complete flycheck-d-unittest flycheck-dmd-dub ac-dcd yaml-mode wc-mode gnuplot-mode)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
@@ -82,6 +81,13 @@
  '(neo-click-changes-root nil)
  '(neo-theme (quote classic))
  '(neo-window-position (quote right))
+ '(org-babel-load-languages (quote ((emacs-lisp . t) (C . t) (gnuplot . t))))
+ '(org-latex-listings (quote minted))
+ '(org-latex-packages-alist (quote (("" "minted" nil))))
+ '(org-latex-pdf-process
+	 (quote
+		("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f" "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f" "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")))
+ '(org-src-fontify-natively t)
  '(package-selected-packages (quote (el-get)))
  '(select-active-regions nil)
  '(tab-width 2)
@@ -113,7 +119,6 @@
 (defun close-all-buffers ()
 	(interactive)
   (mapc 'kill-buffer (buffer-list)))
-
 
 (delete-selection-mode)
 

@@ -1,0 +1,7 @@
+(:name flycheck-dmd-dub
+       :description "elisp to read package.json from dub and add syntax highlighting that resolves dependencies "
+       :type github
+       :pkgname "atilaneves/flycheck-dmd-dub"
+       :depends (flycheck dash f)
+       :prepare (eval-after-load 'flycheck
+                    '(add-hook 'd-mode-hook 'flycheck-dmd-dub-set-variables)))

@@ -1,4 +1,7 @@
 (:name ac-dcd
        :description "Auto-complete completion source for dcd-mode."
        :type github
-       :pkgname "atilaneves/ac-dcd")
+       :pkgname "atilaneves/ac-dcd"
+			 :depends (flycheck-dmd-dub)
+			 :post-init (eval-after-load 'flycheck-dmd-dub
+										'(add-hook 'd-mode-hook 'ac-dcd-setup)))
