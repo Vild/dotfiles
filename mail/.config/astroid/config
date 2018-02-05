@@ -1,7 +1,7 @@
 {
     "astroid": {
         "config": {
-            "version": "9"
+            "version": "10"
         },
         "notmuch_config": "\/home\/wild\/.notmuch-config",
         "debug": {
@@ -14,7 +14,6 @@
     "thread_index": {
         "page_jump_rows": "6",
         "sort_order": "newest",
-        "thread_load_step": "250",
         "cell": {
             "font_description": "default",
             "line_spacing": "2",
@@ -24,12 +23,15 @@
             "subject_color": "#807d74",
             "subject_color_selected": "#000000",
             "background_color_selected": "",
+            "background_color_marked": "#fff584",
+            "background_color_marked_selected": "#bcb559",
             "tags_length": "80",
             "tags_upper_color": "#e5e5e5",
             "tags_lower_color": "#333333",
             "tags_alpha": "0.5",
             "hidden_tags": "attachment,flagged,unread"
-        }
+        },
+        "thread_load_step": "250"
     },
     "general": {
         "time": {
@@ -44,7 +46,8 @@
         "charset": "utf-8",
         "save_draft_on_force_quit": "true",
         "attachment_words": "attach",
-        "attachment_directory": "~"
+        "attachment_directory": "~",
+        "markdown_processor": "marked"
     },
     "mail": {
         "reply": {
@@ -62,7 +65,8 @@
         "send_delay": "2"
     },
     "poll": {
-        "interval": "60"
+        "interval": "60",
+        "always_full_refresh": "false"
     },
     "attachment": {
         "external_open_cmd": "xdg-open"
@@ -112,7 +116,8 @@
             "signature_default_on": "true",
             "signature_attach": "false",
             "signature_separate": "false",
-            "select_query": ""
+            "select_query": "",
+            "signature_file_markdown": ""
         },
         "me@vild": {
             "name": "Dan Printzell",
@@ -129,7 +134,8 @@
             "signature_default_on": "true",
             "signature_attach": "false",
             "signature_separate": "false",
-            "select_query": ""
+            "select_query": "",
+            "signature_file_markdown": ""
         },
         "arch@vild": {
             "name": "Dan Printzell",
@@ -146,7 +152,8 @@
             "signature_default_on": "true",
             "signature_attach": "false",
             "signature_separate": "false",
-            "select_query": ""
+            "select_query": "",
+            "signature_file_markdown": ""
         }
     },
     "startup": {

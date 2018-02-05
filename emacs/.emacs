@@ -59,8 +59,9 @@
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
+;; auto-complete flycheck-d-unittest flycheck-dmd-dub ac-dcd
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this auto-complete flycheck-d-unittest flycheck-dmd-dub ac-dcd yaml-mode wc-mode gnuplot-mode)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
@@ -73,7 +74,9 @@
  '(c-basic-offset 2)
  '(c-default-style (quote ((c++-mode . "cc-mode") (java-mode . "java"))))
  '(c-tab-always-indent nil)
+ '(company-irony-ignore-case t)
  '(custom-enabled-themes (quote (deeper-blue)))
+ '(global-auto-complete-mode nil)
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
  '(global-whitespace-mode t)
@@ -91,6 +94,8 @@
  '(package-selected-packages (quote (el-get)))
  '(select-active-regions nil)
  '(tab-width 2)
+ '(wakatime-cli-path "/usr/bin/wakatime")
+ '(wakatime-python-bin nil)
  '(whitespace-global-modes t)
  '(whitespace-style (quote (face trailing lines-tail space-before-tab))))
 (custom-set-faces
@@ -143,17 +148,20 @@
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
 
-(add-hook 'c++-mode-hook 'company-irony)
-(add-hook 'c-mode-hook 'company-irony)
-(add-hook 'objc-mode-hook 'company-irony)
+;;(add-hook 'c++-mode-hook 'company-irony)
+;;(add-hook 'c-mode-hook 'company-irony)
+;;(add-hook 'objc-mode-hook 'company-irony)
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
 (eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+  '(add-hook 'flycheck-mode-hook 'flycheck-irony-setup))
 
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
+
+(global-set-key (kbd "<C-return>") 'company-complete)
+(global-set-key (kbd "M-RET") 'company-complete)
 
 (require 'wakatime-mode)
 (global-wakatime-mode)
@@ -172,11 +180,11 @@
 (global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
 
 ;;; ac-dcd
-(require 'ac-dcd)
-(add-hook 'd-mode-hook 'ac-dcd-setup)
+;;(require 'ac-dcd)
+;;(add-hook 'd-mode-hook 'ac-dcd-setup)
 
-(require 'flycheck)
-(global-flycheck-mode)
+;;(require 'flycheck)
+;;(global-flycheck-mode)
 
 (provide '.emacs)
 ;;; .emacs ends here
