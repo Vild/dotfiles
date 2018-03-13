@@ -62,7 +62,8 @@
         "message_id_fqdn": "",
         "message_id_user": "",
         "user_agent": "default",
-        "send_delay": "2"
+        "send_delay": "2",
+        "format_flowed": "true"
     },
     "poll": {
         "interval": "60",

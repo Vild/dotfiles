@@ -92,6 +92,7 @@
 		("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f" "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f" "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")))
  '(org-src-fontify-natively t)
  '(package-selected-packages (quote (el-get)))
+ '(safe-local-variable-values (quote ((org-confirm-babel-evaluate))))
  '(select-active-regions nil)
  '(tab-width 2)
  '(wakatime-cli-path "/usr/bin/wakatime")
