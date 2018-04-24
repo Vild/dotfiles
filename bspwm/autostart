@@ -1,0 +1,55 @@
+#!/bin/bash
+
+#0* 144hz
+#1* Acer
+
+MAIN_MONITOR="1"
+ALT_MONITOR=""
+#$(expr $(bspc query -M | wc -l) - 1)
+WS10_ALT_MONITOR=$(expr \( $ALT_MONITOR + 1 \) \* 10)
+
+bspc rule -a Thunar        pesudo_tiled=on
+bspc rule -a Nautilus      pesudo_tiled=on
+bspc rule -a "TeamSpeak 3" desktop="^${ALT_MONITOR}1"
+bspc rule -a Firefox       desktop="^${MAIN_MONITOR}1"
+bspc rule -a Spotify       desktop="^${ALT_MONITOR}2"
+bspc rule -a Hexchat       desktop="^${ALT_MONITOR}2"
+bspc rule -a Flash         floating=on
+bspc rule -a Thunderbird   desktop="^${ALT_MONITOR}3"
+bspc rule -a Astroid   desktop="^${ALT_MONITOR}3"
+bspc rule -a Steam         desktop="^${MAIN_MONITOR}5"
+bspc rule -a galculator    floating=on
+bspc rule -a zenity        floating=on
+bspc rule -a keepass2       desktop="^${ALT_MONITOR}3"
+bspc rule -a Corebird      desktop="^${ALT_MONITOR}2"
+bspc rule -a qemu-system-x86_64 floating=true
+#bspc rule -a epdfview      floating=true
+bspc rule -a discord       desktop="^${ALT_MONITOR}1"
+bspc rule -a deluge         desktop="^${ALT_MONITOR}9"
+bspc rule -a slack         desktop="^${WS10_ALT_MONITOR}"
+bspc rule -a csgo_linux64 fullscreen=on desktop="^${MAIN_MONITOR}5"
+bspc rule -a ibus-ui-gtk3 floating=on
+
+
+wildbar &
+trayer --edge top --align left --widthtype request --heighttype pixel --height 14 --transparent true --alpha 0 --tint 0x232C31 --distance 2176 --distancefrom left --monitor primary &
+/usr/lib/xfce-polkit/xfce-polkit &
+systemctl --user start emacs.service
+#firewall-applet &
+firefox &
+corebird &
+#thunderbird &
+astroid &
+dropboxd &
+megasync &
+keepass &
+steam &
+spotify &
+teamspeak3 &
+hexchat &
+#deluge &
+slack &
+discord &
+xscreensaver -nosplash &
+echo -e 'power on\nscan on\ndefault-agent\nquit' | bluetoothctl
+#compton --config ~/.compton.conf --paint-on-overlay --backend glx --unredir-if-possible -b &

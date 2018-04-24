@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Setup screens and input
+~/.screenlayout/screenlayout.sh
+xrandr --output DP-0 --mode 2560x1440 --refresh 165
+~/bin/wallpaper
+
+bspc monitor "DP-0" -n "1" -d I II III IV V VI VII VIII IX X
+bspc monitor "DVI-D-0" -n "2" -d I II III IV V VI VII VIII IX X
+
+xset m 0 0
+setxkbmap -option terminate:ctrl_alt_bksp
+xsetroot -cursor_name left_ptr
+numlockx
+setxkb se
+
+sxhkd &
+
+bspc config split_ratio     0.50
+bspc config top_padding     14
+bspc config border_width    1
+bspc config window_gap      4
+bspc config fence_grip      100
+bspc config focus_follows_pointer   true
+bspc config click_to_focus          true
+bspc config gapless_monocle         true
+bspc config borderless_monocle      true
+bspc config apply_shadow_property   true
+bspc config adaptative_raise        true
+bspc config normal_frame_opacity 0.0
+bspc config focused_frame_opacity 0.1
+
+bspc config focused_border_color        "#33FFFF"  #"#11809E"
+bspc config focused_locked_border_color "#C7B579"
+
+bspc config active_border_color         "#004455"
+bspc config active_locked_border_color  "#7E7F89"
+
+bspc config normal_border_color         "#3300FF" #"#3F3E3B"
+bspc config normal_locked_border_color  "#3F3E3B"
+
+bspc config presel_border_color         "#A7BF81"
+bspc config urgent_border_color         "#EFA29A"
+
+~/autostart
