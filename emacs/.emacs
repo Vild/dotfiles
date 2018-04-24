@@ -61,7 +61,7 @@
 
 ;; auto-complete flycheck-d-unittest flycheck-dmd-dub ac-dcd
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
@@ -84,12 +84,21 @@
  '(neo-click-changes-root nil)
  '(neo-theme (quote classic))
  '(neo-window-position (quote right))
- '(org-babel-load-languages (quote ((emacs-lisp . t) (C . t) (gnuplot . t))))
+ '(org-babel-load-languages
+	 (quote
+		((emacs-lisp . t)
+		 (C . t)
+		 (gnuplot . t)
+		 (plantuml . t)
+		 (dot . t)
+		 (sh . t))))
+ '(org-confirm-babel-evaluate t)
  '(org-latex-listings (quote minted))
  '(org-latex-packages-alist (quote (("" "minted" nil))))
  '(org-latex-pdf-process
 	 (quote
-		("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f" "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f" "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")))
+		("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f' -pdf -bibtex -f %f")))
+ '(org-plantuml-jar-path "/opt/plantuml/plantuml.jar")
  '(org-src-fontify-natively t)
  '(package-selected-packages (quote (el-get)))
  '(safe-local-variable-values (quote ((org-confirm-babel-evaluate))))
@@ -186,6 +195,25 @@
 
 ;;(require 'flycheck)
 ;;(global-flycheck-mode)
+
+;;(defun orgfix-redisplay-inline-images ()
+;;  (when org-inline-image-overlays
+;;    (org-redisplay-inline-images)))
+
+;;(after-loading 'org
+;;							 (add-hook 'org-babel-after-execute-hook 'orgfix-redisplay-inline-images))
+
+(require 'org-ref)
+
+(setq org-ref-bibliography-notes "~/MEGA/bibliography/notes.org"
+      org-ref-default-bibliography '("~/MEGA/bibliography/references.bib")
+      org-ref-pdf-directory "~/MEGA/bibliography/pdfs/")
+
+(setq bibtex-completion-bibliography "~/MEGA/bibliography/references.bib"
+      bibtex-completion-library-path "~/MEGA/bibliography/bibtex-pdfs"
+      bibtex-completion-notes-path "~/MEGA/bibliography/helm-bibtex-notes")
+
+(setq bibtex-completion-pdf-open-function 'org-open-file)
 
 (provide '.emacs)
 ;;; .emacs ends here
