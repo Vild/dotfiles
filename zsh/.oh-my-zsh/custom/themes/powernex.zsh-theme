@@ -37,10 +37,19 @@ local g_status="%(?:%{$fg_bold[white]%}#%m➤ :%{$fg_bold[red]%}#%m➤ )"
 local g_changes="$FG[038][%~]%{$reset_color%}"
 # Define prompts
 #
-PROMPT='${g_status}${g_changes} $(git_prompt_info)'
 
 # git
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}) %{$fg[green]%}✓"
+
+ZSH_PROMPT_BASE_COLOR="%{$fg_bold[blue]%}"
+ZSH_THEME_REPO_NAME_COLOR="%{$fg_bold[red]%}"
+
+ZSH_THEME_SVN_PROMPT_PREFIX="%{$fg_bold[blue]%}svn:(%{$fg[red]%}"
+ZSH_THEME_SVN_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_SVN_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+ZSH_THEME_SVN_PROMPT_CLEAN="%{$fg[blue]%}) %{$fg[green]%}✓"
+
+PROMPT='${g_status}${g_changes} $(git_prompt_info)$(svn_prompt_info)%{$reset_color%}'
