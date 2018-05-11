@@ -61,7 +61,7 @@
 
 ;; auto-complete flycheck-d-unittest flycheck-dmd-dub ac-dcd
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools artbollocks-mode)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
@@ -113,6 +113,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(artbollocks-passive-voice-face ((t (:background "White" :foreground "black"))))
+ '(artbollocks-weasel-words-face ((t (:background "White" :foreground "firebrick"))))
  '(my-carriage-return-face ((((class color)) (:background "blue"))) t)
  '(my-tab-face ((((class color)) (:background "green"))) t))
 
@@ -214,6 +216,15 @@
       bibtex-completion-notes-path "~/MEGA/bibliography/helm-bibtex-notes")
 
 (setq bibtex-completion-pdf-open-function 'org-open-file)
+
+(require 'artbollocks-mode)
+(add-hook 'text-mode-hook 'artbollocks-mode)
+(add-hook 'org-capture-mode-hook 'artbollocks-mode)
+
+(defun check-grammar ()
+	"Checks the current buffer with atdtool"
+	(interactive)
+	(compile (concat "atdtool " (shell-quote-argument (buffer-file-name)))))
 
 (provide '.emacs)
 ;;; .emacs ends here

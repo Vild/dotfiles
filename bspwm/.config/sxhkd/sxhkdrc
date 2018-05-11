@@ -156,10 +156,10 @@ Print
 	shoot {-s,-s} 2>&1 >/dev/null
 
 XF86AudioRaiseVolume
-	/home/wild/SpotifyVolume.sh +1%; playerctl volume 0.01+
+	[[ "$(playerctl -l | head -n1)" == "spotify" ]] && /home/wild/SpotifyVolume.sh +1% || playerctl volume 0.01+
 
 XF86AudioLowerVolume
-	/home/wild/SpotifyVolume.sh -1%; playerctl volume 0.01-
+	[[ "$(playerctl -l | head -n1)" == "spotify" ]] && /home/wild/SpotifyVolume.sh -1% || playerctl volume 0.01-
 
 XF86AudioPlay
     playerctl play-pause
