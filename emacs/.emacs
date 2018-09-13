@@ -61,7 +61,7 @@
 
 ;; auto-complete flycheck-d-unittest flycheck-dmd-dub ac-dcd
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools artbollocks-mode)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools artbollocks-mode magit graphql graphql-mode irony-eldoc)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
@@ -72,7 +72,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 2)
- '(c-default-style (quote ((c++-mode . "cc-mode") (java-mode . "java"))))
+ '(c-default-style
+	 (quote
+		((c-mode . "cc-mode")
+		 (c++-mode . "cc-mode")
+		 (java-mode . "java"))))
  '(c-tab-always-indent nil)
  '(company-irony-ignore-case t)
  '(custom-enabled-themes (quote (deeper-blue)))
@@ -90,8 +94,7 @@
 		 (C . t)
 		 (gnuplot . t)
 		 (plantuml . t)
-		 (dot . t)
-		 (sh . t))))
+		 (dot . t))))
  '(org-confirm-babel-evaluate t)
  '(org-latex-listings (quote minted))
  '(org-latex-packages-alist (quote (("" "minted" nil))))
@@ -100,7 +103,7 @@
 		("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f' -pdf -bibtex -f %f")))
  '(org-plantuml-jar-path "/opt/plantuml/plantuml.jar")
  '(org-src-fontify-natively t)
- '(package-selected-packages (quote (el-get)))
+ '(package-selected-packages (quote (magit el-get)))
  '(safe-local-variable-values (quote ((org-confirm-babel-evaluate))))
  '(select-active-regions nil)
  '(tab-width 2)
@@ -165,6 +168,7 @@
 ;;(add-hook 'objc-mode-hook 'company-irony)
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+(add-hook 'irony-mode-hook #'irony-eldoc)
 
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook 'flycheck-irony-setup))

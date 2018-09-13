@@ -1,0 +1,5 @@
+(:name graphql
+       :description "GraphQL utilities"
+       :website "https://github.com/vermiculus/graphql.el"
+       :type github
+:pkgname "vermiculus/graphql.el")

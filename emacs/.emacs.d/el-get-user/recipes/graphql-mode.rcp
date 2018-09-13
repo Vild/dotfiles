@@ -1,0 +1,5 @@
+(:name graphql-mode
+       :description "An Emacs mode for GraphQL "
+       :website "https://github.com/davazp/graphql-mode"
+       :type github
+:pkgname "davazp/graphql-mode")

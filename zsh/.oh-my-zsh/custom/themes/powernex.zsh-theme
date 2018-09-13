@@ -1,10 +1,10 @@
 lc="$reset_color$FX[bold]$FG[006]"    # labels
 nc="$reset_color$FX[bold]$FG[006]"    # user and hostname
 ic="$reset_color$FX[bold]$FG[007]"    # info
-fc="$reset_color$FX[bold]$FG[003]"                            # first color
-mc="$reset_color$FX[bold]$FG[003]$BG[002]" # mixer color
+fc="$reset_color$FX[bold]$FG[011]"                            # first color
+mc="$reset_color$FX[bold]$FG[011]$BG[002]" # mixer color
 sc="$reset_color$FG[002]"                   # second color
-tc1="$reset_color$FX[bold]$FG[003]"                     # second color
+tc1="$reset_color$FX[bold]$FG[011]"                     # second color
 tc2="$reset_color$FX[bold]$FG[002]"                     # second color
 
 hostname="$(hostname)"

@@ -16,7 +16,7 @@ bspc rule -a "Astroid:*"            desktop="^${ALT_MONITOR}3"
 bspc rule -a "Steam:*"              desktop="^${MAIN_MONITOR}5"
 bspc rule -a "Galculator:*"         state=floating
 bspc rule -a "Zenity:*"             state=floating
-bspc rule -a "KeePass2:*"           desktop="^${ALT_MONITOR}3"
+bspc rule -a "keepassxc:*"           desktop="^${ALT_MONITOR}3"
 bspc rule -a "Corebird:*"           desktop="^${ALT_MONITOR}2"
 bspc rule -a "Qemu-system-x86_64:*" state=floating
 bspc rule -a "discord:*"            desktop="^${ALT_MONITOR}1"
@@ -36,14 +36,14 @@ corebird &
 astroid &
 #dropboxd &
 megasync &
-keepass &
+keepassxc &
 #steam &
 #spotify &
 teamspeak3 &
 hexchat &
 #deluge &
 slack &
-discord &
+(betterdiscordctl reinstall -f Canary; discord) &
 xscreensaver -nosplash &
 echo -e 'power on\nscan on\ndefault-agent\nquit' | bluetoothctl
-#compton --config ~/.compton.conf --paint-on-overlay --backend glx --unredir-if-possible -b &
+compton --config ~/.compton.conf -b &

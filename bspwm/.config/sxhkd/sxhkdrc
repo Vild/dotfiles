@@ -58,8 +58,10 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
-super + {_,shift + }{1,2}
-	bspc {desktop -f, monitor -f} {prev,next}.local
+#super + {_,shift + }{1,2}
+#	bspc {desktop -f, monitor -f} {prev,next}.local
+super + {1,2}
+	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -135,6 +137,16 @@ super + KP_Subtract
       bspc config -d focused window_gap $((`bspc config -d focused window_gap` - 2 ))
 
 super + {_,shift +} KP_Enter
+      bspc config -d focused window_gap {6,`zenity --entry --add-entry="Size" --title="" --text="Size"`}
+
+
+super + plus
+      bspc config -d focused window_gap $((`bspc config -d focused window_gap` + 2 ))
+
+super + minus
+      bspc config -d focused window_gap $((`bspc config -d focused window_gap` - 2 ))
+
+super + {_,shift +} apostrophe
       bspc config -d focused window_gap {6,`zenity --entry --add-entry="Size" --title="" --text="Size"`}
 
 
