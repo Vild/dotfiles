@@ -97,6 +97,7 @@
 		 (dot . t))))
  '(org-confirm-babel-evaluate t)
  '(org-latex-listings (quote minted))
+ '(org-latex-minted-options (quote (("breaklines" "true") ("breakanywhere" "true"))))
  '(org-latex-packages-alist (quote (("" "minted" nil))))
  '(org-latex-pdf-process
 	 (quote
