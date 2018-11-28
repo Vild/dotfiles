@@ -7,7 +7,7 @@ if [ ! -e $ZSH ]; then
 fi;
 ZSH_THEME="powernex"
 
-plugins=(git svn-fast-info colored-man screen rsync nyan copyfile copydir cp emoji-clock tmuxinator taskwarrior ssh-agent pass)
+plugins=(git svn-fast-info colored-man screen rsync copyfile copydir cp emoji-clock tmuxinator taskwarrior ssh-agent pass)
 source $ZSH/oh-my-zsh.sh
 
 alias et="emacsclient -t" # was "emacs -nw"
