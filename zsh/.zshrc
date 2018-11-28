@@ -34,9 +34,17 @@ export PATH="$PATH:/home/wild/.local/bin/:/home/wild/bin"
 
 export SUDO_ASKPASS="/usr/lib/ssh/ssh-askpass"
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t"                  # $EDITOR should open in terminal
-export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI with non-daemon as alternate
+if hash emacsclient 2>/dev/null; then
+		export EDITOR="emacsclient -t"
+		export VISUAL="emacsclient -c -a emacs"
+else
+		export EDITOR="vim"
+		export VISUAL="vim"
+fi
 export LESS="-RSMsiI"
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
-wmname LG3D 2>&1 > /dev/null
+local hostname="$(hostname)"
+if hash wmname  2>/dev/null && [ -n $SSH_TTY ]; then
+		wmname LG3D 2>&1 > /dev/null
+fi

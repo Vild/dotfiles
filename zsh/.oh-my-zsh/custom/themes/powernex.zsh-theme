@@ -1,20 +1,20 @@
-lc="$reset_color$FX[bold]$FG[006]"    # labels
-nc="$reset_color$FX[bold]$FG[006]"    # user and hostname
-ic="$reset_color$FX[bold]$FG[007]"    # info
-fc="$reset_color$FX[bold]$FG[011]"                            # first color
-mc="$reset_color$FX[bold]$FG[011]$BG[002]" # mixer color
-sc="$reset_color$FG[002]"                   # second color
-tc1="$reset_color$FX[bold]$FG[011]"                     # second color
-tc2="$reset_color$FX[bold]$FG[002]"                     # second color
+local lc="$reset_color$FX[bold]$FG[006]"    # labels
+local nc="$reset_color$FX[bold]$FG[006]"    # user and hostname
+local ic="$reset_color$FX[bold]$FG[007]"    # info
+local fc="$reset_color$FX[bold]$FG[011]"                            # first color
+local mc="$reset_color$FX[bold]$FG[011]$BG[002]" # mixer color
+local sc="$reset_color$FG[002]"                   # second color
+local tc1="$reset_color$FX[bold]$FG[011]"                     # second color
+local tc2="$reset_color$FX[bold]$FG[002]"                     # second color
 
-hostname="$(hostname)"
-os='ArchLinux'
-kernel="$(uname -sr)"
+local hostname="$(hostname)"
+local os="$(grep 'PRETTY_NAME=' /etc/os-release | cut -d'"' -f2)"
+local kernel="$(uname -sr)"
 #git describe --long | sed -e 's/\([^-]*-g\)/r\1/;s/-/./g' -e "
-uptime="$(uptime -p | sed 's/up //')"
-packages="0xDEAD"
-shell="$(basename $SHELL)"
-WM="Hopefully, DWin"
+local uptime="$(uptime -p | sed 's/up //')"
+local packages="0xDEAD"
+local shell="$(basename $SHELL)"
+local WM="Hopefully, DWin"
 
 # logo
 logo='${fc}    ▟█▛         ${nc}${USER}${ic}@${nc}%m$reset_color
