@@ -14,7 +14,7 @@ export PATH="$PATH:/home/wild/.local/bin/:/home/wild/bin"
 
 export SUDO_ASKPASS="/usr/lib/ssh/ssh-askpass"
 export ALTERNATE_EDITOR=""
-if hash emacsclient 2>/dev/null; then
+if [ -x "$(command -v emacsclient)" ]; then
 	export EDITOR="emacsclient -t"
 	export VISUAL="emacsclient -c -a emacs"
 	alias et="emacsclient -t"
@@ -31,7 +31,7 @@ export LESS="-RSMsiI"
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 local hostname="$(hostname)"
-if hash wmname  2>/dev/null && [ -n $SSH_TTY ]; then
+if [ -x "$(command -v wmname)" ] && [ -n $SSH_TTY ]; then
 		wmname LG3D 2>&1 > /dev/null
 fi
 
