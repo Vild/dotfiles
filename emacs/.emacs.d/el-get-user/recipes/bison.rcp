@@ -1,0 +1,6 @@
+(:name bison
+       :description "Emacs major mode for Bison, Yacc and Lex grammars"
+       :type http
+			 :features bison
+       :url "https://www.emacswiki.org/emacs/download/bison.el"
+       :prepare (add-to-list 'auto-mode-alist '("\\.y$" . bison-mode)))

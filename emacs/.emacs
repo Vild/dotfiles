@@ -31,23 +31,23 @@
 
 (set-default-font "DejaVu Sans Mono Book 14")
 
-(require 'package)
-
-;; Repositories
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
-
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (require 'package)
+;; Repositories
+(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (package-initialize)
-(package-refresh-contents)
 
 (unless (require 'el-get nil 'noerror)
-  (package-install 'el-get)
-  (require 'el-get))
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
 
 (defun el-get-cleanup (packages)
   "Remove packages not explicitly declared"
@@ -61,10 +61,12 @@
 
 ;; auto-complete flycheck-d-unittest flycheck-dmd-dub ac-dcd
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools artbollocks-mode magit graphql graphql-mode irony-eldoc)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools artbollocks-mode magit graphql graphql-mode irony-eldoc bison flex)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
+
+(package-refresh-contents)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -84,6 +86,7 @@
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
  '(global-whitespace-mode t)
+ '(irony-supported-major-modes (quote (c++-mode c-mode objc-mode bison-mode flex-mode)))
  '(neo-autorefresh nil)
  '(neo-click-changes-root nil)
  '(neo-theme (quote classic))
@@ -95,6 +98,7 @@
 		 (gnuplot . t)
 		 (plantuml . t)
 		 (dot . t)
+		 (python . t)
 		 (shell . t))))
  '(org-confirm-babel-evaluate nil)
  '(org-latex-listings (quote minted))
@@ -106,7 +110,10 @@
  '(org-plantuml-jar-path "/opt/plantuml/plantuml.jar")
  '(org-src-fontify-natively t)
  '(package-selected-packages (quote (magit el-get)))
- '(safe-local-variable-values (quote ((org-confirm-babel-evaluate))))
+ '(safe-local-variable-values
+	 (quote
+		((c-default-style . cc-mode)
+		 (org-confirm-babel-evaluate))))
  '(select-active-regions nil)
  '(tab-width 2)
  '(visible-bell nil)
