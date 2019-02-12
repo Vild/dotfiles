@@ -96,7 +96,7 @@
 		 (plantuml . t)
 		 (dot . t)
 		 (shell . t))))
- '(org-confirm-babel-evaluate t)
+ '(org-confirm-babel-evaluate nil)
  '(org-latex-listings (quote minted))
  '(org-latex-minted-options (quote (("breaklines" "true") ("breakanywhere" "true"))))
  '(org-latex-packages-alist (quote (("" "minted" nil))))
