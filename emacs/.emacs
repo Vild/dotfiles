@@ -112,7 +112,8 @@
  '(package-selected-packages (quote (magit el-get)))
  '(safe-local-variable-values
 	 (quote
-		((c-default-style . cc-mode)
+		((c-set-style . cc-mode)
+		 (c-default-style . cc-mode)
 		 (org-confirm-babel-evaluate))))
  '(select-active-regions nil)
  '(tab-width 2)
