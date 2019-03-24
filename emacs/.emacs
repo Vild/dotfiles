@@ -13,8 +13,6 @@
 
 (setq visible-bell t)
 
-(setq-default fill-column 80)
-
 (global-hl-line-mode 1)
 
 (setq case-fold-search t)
