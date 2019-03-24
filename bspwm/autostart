@@ -24,6 +24,7 @@ bspc rule -a "Deluge:*"             desktop="^${ALT_MONITOR}9"
 bspc rule -a "Slack:*"              desktop="^${WS10_ALT_MONITOR}"
 #bspc rule -a "csgo_linux64:*" state=fullscreen desktop="^${MAIN_MONITOR}5"
 #bspc rule -a "ibus-ui-gtk3:*" state=floating
+bspc rule -a Chromium:"0.0.0.0" state=floating rectangle=1280x720+$((1920 + 2560/2 - 1280/2))+$((1440/2 - 720/2))
 
 wildbar &
 trayer --edge top --align left --widthtype request --heighttype pixel --height 14 --transparent true --alpha 0 --tint 0x232C31 --distance 255 --distancefrom left --monitor primary &
