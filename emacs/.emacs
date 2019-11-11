@@ -59,7 +59,7 @@
 
 ;; auto-complete flycheck-d-unittest flycheck-dmd-dub ac-dcd
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools artbollocks-mode magit graphql graphql-mode irony-eldoc bison flex sdlang-mode use-package transient)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools artbollocks-mode magit graphql graphql-mode irony-eldoc bison flex sdlang-mode use-package transient cuda-mode)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
