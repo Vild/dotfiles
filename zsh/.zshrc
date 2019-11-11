@@ -39,10 +39,10 @@ alias lock="i3lock-fancy -p -t \"No hackeru pl0x\""
 alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias fixD="find . -iname \"*.d\" -exec dfmt -i {} \;"
 
-alias music1="rdmd --eval=\"import std.c.stdio; for(int i=0;;i++)putchar(((i*(i>>8|i>>9)&46&i>>8))^(i&i>>13|i>>6));\" | aplay"
-alias music2="rdmd --eval=\"import std.c.stdio; for(int i=0;;i++)putchar(((i*(i>>17|i>>9)&46&i>>3))^(i&i>>10/*|i>>100*/));\" | aplay"
-alias music3="rdmd --eval=\"import std.c.stdio; for(int i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));\" | aplay"
-alias music4="rdmd --eval=\"import std.c.stdio; for(int i=0;;i++)putchar(((i^(/*i>>64|*/i>>11)&70&i>>8))*(i&i>>12|i>>4));\" | aplay"
+alias music1="rdmd --eval=\"import core.stdc.stdio; for(int i=0;;i++)putchar(((i*(i>>8|i>>9)&46&i>>8))^(i&i>>13|i>>6));\" | aplay"
+alias music2="rdmd --eval=\"import core.stdc.stdio; for(int i=0;;i++)putchar(((i*(i>>17|i>>9)&46&i>>3))^(i&i>>10/*|i>>100*/));\" | aplay"
+alias music3="rdmd --eval=\"import core.stdc.stdio; for(int i=0;;i++)putchar(((i*(i>>3|i>>11)&43&i>>8))^(i&i>>12|i>>4));\" | aplay"
+alias music4="rdmd --eval=\"import core.stdc.stdio; for(int i=0;;i++)putchar(((i^(/*i>>64|*/i>>11)&70&i>>8))*(i&i>>12|i>>4));\" | aplay"
 
 alias powernex="cd ~/OSDev/PowerNex; source env.sh"
 
