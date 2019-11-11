@@ -2,11 +2,11 @@
 
 # Setup screens and input
 ~/.screenlayout/screenlayout.sh
-xrandr --output DP-0 --mode 2560x1440 --refresh 165
+xrandr --output DP-4 --mode 2560x1440 --refresh 165
 ~/bin/wallpaper
 
-bspc monitor "DP-0" -n "1" -d I II III IV V VI VII VIII IX X
-bspc monitor "DVI-D-0" -n "2" -d I II III IV V VI VII VIII IX X
+bspc monitor "DP-4" -n "1" -d I II III IV V VI VII VIII IX X
+bspc monitor "DP-3" -n "2" -d I II III IV V VI VII VIII IX X
 
 xset m 0 0
 setxkbmap -option terminate:ctrl_alt_bksp

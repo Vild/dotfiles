@@ -155,7 +155,7 @@ super + {_,shift +} apostrophe
 #
 
 super + Return
-    lxterminal
+    tilix
 
 super + @space
       dmenu_run -l 20 -w 200 -y 18 -fn "-lucy-tewi-medium-r-normal--11-90-*-*-*-*-iso10646-1" -nb '#232c31' -nf '#6c7a80' -sf '#ac4142' -sb '#232c31' -o 0.95
