@@ -161,6 +161,42 @@
             "signature_separate": "false",
             "select_query": "",
             "signature_file_markdown": ""
+        },
+        "grn@vild": {
+            "name": "Dan Printzell",
+            "email": "grn@vild.io",
+            "gpgkey": "0x0E87D6C3F9AF7FDED0C8588D22E3B67B4A86FDE7",
+            "always_gpg_sign": "true",
+            "sendmail": "msmtp --read-envelope-from -i -t",
+            "default": "true",
+            "save_sent": "true",
+            "save_sent_to": "\/home\/wild\/mail\/xwildn00bx\/Sent\/cur\/",
+            "additional_sent_tags": "",
+            "save_drafts_to": "\/home\/wild\/mail\/xwildn00bx\/Drafts\/",
+            "signature_file": "",
+            "signature_default_on": "true",
+            "signature_attach": "false",
+            "signature_separate": "false",
+            "select_query": "",
+            "signature_file_markdown": ""
+        },
+        "gsoc@vild": {
+            "name": "Dan Printzell",
+            "email": "gsoc@vild.io",
+            "gpgkey": "0x0E87D6C3F9AF7FDED0C8588D22E3B67B4A86FDE7",
+            "always_gpg_sign": "true",
+            "sendmail": "msmtp --read-envelope-from -i -t",
+            "default": "true",
+            "save_sent": "true",
+            "save_sent_to": "\/home\/wild\/mail\/xwildn00bx\/Sent\/cur\/",
+            "additional_sent_tags": "",
+            "save_drafts_to": "\/home\/wild\/mail\/xwildn00bx\/Drafts\/",
+            "signature_file": "",
+            "signature_default_on": "true",
+            "signature_attach": "false",
+            "signature_separate": "false",
+            "select_query": "",
+            "signature_file_markdown": ""
         }
     },
     "startup": {
