@@ -1,0 +1,6 @@
+(:name sdlang-mode
+       :website "https://github.com/CyberShadow/sdlang-mode"
+       :description "An Emacs major mode for editing Simple Declarative Language files"
+       :type github
+       :pkgname "CyberShadow/sdlang-mode"
+       :prepare (add-to-list 'auto-mode-alist '("\\.sdl$" . sdlang-mode)))

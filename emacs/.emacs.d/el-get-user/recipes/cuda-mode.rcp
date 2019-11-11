@@ -1,0 +1,8 @@
+(:name cuda-mode
+       :website "https://github.com/chachi/cuda-mode"
+       :description "cuda-mode for Emacs."
+       :type github
+       :pkgname "chachi/cuda-mode"
+       :prepare (progn
+									(add-to-list 'auto-mode-alist '("\\.cu$" . cuda-mode))
+									(add-to-list 'auto-mode-alist '("\\.cuh$" . cuda-mode))))

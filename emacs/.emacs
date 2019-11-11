@@ -59,7 +59,7 @@
 
 ;; auto-complete flycheck-d-unittest flycheck-dmd-dub ac-dcd
 (defvar my-packages
-  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools artbollocks-mode magit graphql graphql-mode irony-eldoc bison flex)
+  '(notmuch neotree d-mode company-mode flycheck irony-mode flycheck-irony company-irony glsl-mode wakatime-mode multiple-cursors fold-this yaml-mode wc-mode gnuplot-mode org-ref htmlize pdf-tools artbollocks-mode magit graphql graphql-mode irony-eldoc bison flex sdlang-mode use-package transient)
   "Canonical list of packages.")
 (el-get-cleanup my-packages)
 (el-get 'sync my-packages)
@@ -83,12 +83,21 @@
  '(global-auto-complete-mode nil)
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
+ '(global-magit-file-mode t)
  '(global-whitespace-mode t)
- '(irony-supported-major-modes (quote (c++-mode c-mode objc-mode bison-mode flex-mode)))
+ '(irony-supported-major-modes
+	 (quote
+		(c++-mode c-mode objc-mode bison-mode flex-mode cuda-mode)))
+ '(magit-auto-revert-mode t)
+ '(magit-wip-after-apply-mode nil)
+ '(magit-wip-after-save-mode nil)
+ '(magit-wip-before-change-mode nil)
  '(neo-autorefresh nil)
  '(neo-click-changes-root nil)
  '(neo-theme (quote classic))
  '(neo-window-position (quote right))
+ '(org-ascii-inner-margin 0)
+ '(org-ascii-verbatim-format "'%s'")
  '(org-babel-load-languages
 	 (quote
 		((emacs-lisp . t)
@@ -105,9 +114,9 @@
  '(org-latex-pdf-process
 	 (quote
 		("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f' -pdf -bibtex -f %f")))
- '(org-plantuml-jar-path "/opt/plantuml/plantuml.jar")
+ '(org-plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar")
  '(org-src-fontify-natively t)
- '(package-selected-packages (quote (magit el-get)))
+ '(package-selected-packages (quote (el-get)))
  '(safe-local-variable-values
 	 (quote
 		((c-set-style . cc-mode)
@@ -218,6 +227,10 @@
 ;;(after-loading 'org
 ;;							 (add-hook 'org-babel-after-execute-hook 'orgfix-redisplay-inline-images))
 
+(with-eval-after-load 'org
+  (add-hook 'org-mode-hook #'flyspell-mode)
+  (add-hook 'org-mode-hook #'ispell-minor-mode))
+
 (require 'org-ref)
 
 (setq org-ref-bibliography-notes "~/MEGA/bibliography/notes.org"
@@ -238,6 +251,13 @@
 	"Checks the current buffer with atdtool"
 	(interactive)
 	(compile (concat "atdtool " (shell-quote-argument (buffer-file-name)))))
+
+(require 'git-commit)
+(require 'magit)
+
+(require 'server)
+(use-package server
+						 :config (or (server-running-p) (server-mode)))
 
 (provide '.emacs)
 ;;; .emacs ends here
